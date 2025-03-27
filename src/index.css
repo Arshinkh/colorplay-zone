@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -32,22 +33,15 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.8rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -79,6 +73,7 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -96,6 +91,108 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-white/80 border border-white/20 shadow-xl;
+  }
+  
+  .activity-card {
+    @apply relative overflow-hidden rounded-2xl transition-all duration-500 ease-out 
+           transform hover:scale-[1.02] hover:-translate-y-1 cursor-pointer;
+  }
+  
+  .activity-card::before {
+    @apply content-[''] absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none;
+  }
+  
+  .activity-card:hover::before {
+    @apply opacity-10;
+  }
+  
+  .activity-btn {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300 
+           transform hover:scale-105 shadow-md;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-4 text-gray-900;
+  }
+  
+  .section-subtitle {
+    @apply text-xl text-gray-600 max-w-3xl mx-auto mb-12;
+  }
+}
+
+.hero-text {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro-animation > * {
+  animation-fill-mode: both;
+  animation-duration: 0.6s;
+}
+
+.intro-animation > *:nth-child(1) { animation-delay: 0.1s; }
+.intro-animation > *:nth-child(2) { animation-delay: 0.2s; }
+.intro-animation > *:nth-child(3) { animation-delay: 0.3s; }
+.intro-animation > *:nth-child(4) { animation-delay: 0.4s; }
+.intro-animation > *:nth-child(5) { animation-delay: 0.5s; }
+.intro-animation > *:nth-child(6) { animation-delay: 0.6s; }
+.intro-animation > *:nth-child(7) { animation-delay: 0.7s; }
+.intro-animation > *:nth-child(8) { animation-delay: 0.8s; }
+
+.cricket-card { background-color: rgba(76, 175, 80, 0.1); border-color: rgba(76, 175, 80, 0.2); }
+.cricket-card:hover { box-shadow: 0 15px 30px rgba(76, 175, 80, 0.15); }
+.cricket-btn { background-color: #4CAF50; color: white; }
+.cricket-btn:hover { background-color: #43A047; box-shadow: 0 6px 20px rgba(76, 175, 80, 0.25); }
+
+.football-card { background-color: rgba(33, 150, 243, 0.1); border-color: rgba(33, 150, 243, 0.2); }
+.football-card:hover { box-shadow: 0 15px 30px rgba(33, 150, 243, 0.15); }
+.football-btn { background-color: #2196F3; color: white; }
+.football-btn:hover { background-color: #1E88E5; box-shadow: 0 6px 20px rgba(33, 150, 243, 0.25); }
+
+.pickleball-card { background-color: rgba(156, 39, 176, 0.1); border-color: rgba(156, 39, 176, 0.2); }
+.pickleball-card:hover { box-shadow: 0 15px 30px rgba(156, 39, 176, 0.15); }
+.pickleball-btn { background-color: #9C27B0; color: white; }
+.pickleball-btn:hover { background-color: #8E24AA; box-shadow: 0 6px 20px rgba(156, 39, 176, 0.25); }
+
+.arcade-card { background-color: rgba(244, 67, 54, 0.1); border-color: rgba(244, 67, 54, 0.2); }
+.arcade-card:hover { box-shadow: 0 15px 30px rgba(244, 67, 54, 0.15); }
+.arcade-btn { background-color: #F44336; color: white; }
+.arcade-btn:hover { background-color: #E53935; box-shadow: 0 6px 20px rgba(244, 67, 54, 0.25); }
+
+.steam-card { background-color: rgba(144, 202, 249, 0.1); border-color: rgba(144, 202, 249, 0.2); }
+.steam-card:hover { box-shadow: 0 15px 30px rgba(144, 202, 249, 0.15); }
+.steam-btn { background-color: #90CAF9; color: #2c3e50; }
+.steam-btn:hover { background-color: #64B5F6; box-shadow: 0 6px 20px rgba(144, 202, 249, 0.25); }
+
+.food-card { background-color: rgba(255, 152, 0, 0.1); border-color: rgba(255, 152, 0, 0.2); }
+.food-card:hover { box-shadow: 0 15px 30px rgba(255, 152, 0, 0.15); }
+.food-btn { background-color: #FF9800; color: white; }
+.food-btn:hover { background-color: #FB8C00; box-shadow: 0 6px 20px rgba(255, 152, 0, 0.25); }
+
+.trampoline-card { background-color: rgba(255, 235, 59, 0.1); border-color: rgba(255, 235, 59, 0.2); }
+.trampoline-card:hover { box-shadow: 0 15px 30px rgba(255, 235, 59, 0.15); }
+.trampoline-btn { background-color: #FFEB3B; color: #2c3e50; }
+.trampoline-btn:hover { background-color: #FDD835; box-shadow: 0 6px 20px rgba(255, 235, 59, 0.25); }
+
+.turf-card { background-color: rgba(27, 94, 32, 0.1); border-color: rgba(27, 94, 32, 0.2); }
+.turf-card:hover { box-shadow: 0 15px 30px rgba(27, 94, 32, 0.15); }
+.turf-btn { background-color: #1B5E20; color: white; }
+.turf-btn:hover { background-color: #174d1b; box-shadow: 0 6px 20px rgba(27, 94, 32, 0.25); }
