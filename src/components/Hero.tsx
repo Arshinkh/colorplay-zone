@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Activity, DumbbellIcon, Gamepad2Icon, UtensilsIcon, TrampolineIcon } from 'lucide-react';
+import { Activity, DumbbellIcon, Gamepad2Icon, UtensilsIcon, ZapIcon } from 'lucide-react';
 
 const Hero = () => {
   const imageContainerRef = useRef<HTMLDivElement>(null);
@@ -53,7 +53,7 @@ const Hero = () => {
                 <Gamepad2Icon size={28} />
               </div>
               <div className="p-3 bg-yellow-100 rounded-full text-yellow-600">
-                <TrampolineIcon size={28} />
+                <ZapIcon size={28} />
               </div>
               <div className="p-3 bg-orange-100 rounded-full text-orange-600">
                 <UtensilsIcon size={28} />
@@ -91,7 +91,7 @@ const Hero = () => {
             </div>
             <div className="parallax-image absolute w-40 h-40 rounded-2xl shadow-xl bottom-32 left-0 trampoline-card animate-float overflow-hidden" style={{animationDelay: '1.5s'}}>
               <div className="absolute inset-0 bg-yellow-100/50 flex items-center justify-center">
-                <TrampolineIcon size={36} className="text-yellow-600" />
+                <ZapIcon size={36} className="text-yellow-600" />
                 <span className="absolute bottom-4 font-medium text-yellow-800">Trampoline</span>
               </div>
             </div>
