@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { Activity, DumbbellIcon, Gamepad2Icon, UtensilsIcon, TrampolineIcon } from 'lucide-react';
 
 const Hero = () => {
   const imageContainerRef = useRef<HTMLDivElement>(null);
@@ -40,6 +41,24 @@ const Hero = () => {
             <p className="animate-fade-in text-xl text-gray-600 mb-8 max-w-lg">
               Experience a world of vibrant activities, each with its unique color and excitement. From sports to relaxation, we have something for everyone.
             </p>
+
+            <div className="hidden sm:flex space-x-6 mb-8 animate-fade-in">
+              <div className="p-3 bg-green-100 rounded-full text-green-600">
+                <Activity size={28} />
+              </div>
+              <div className="p-3 bg-blue-100 rounded-full text-blue-600">
+                <DumbbellIcon size={28} />
+              </div>
+              <div className="p-3 bg-purple-100 rounded-full text-purple-600">
+                <Gamepad2Icon size={28} />
+              </div>
+              <div className="p-3 bg-yellow-100 rounded-full text-yellow-600">
+                <TrampolineIcon size={28} />
+              </div>
+              <div className="p-3 bg-orange-100 rounded-full text-orange-600">
+                <UtensilsIcon size={28} />
+              </div>
+            </div>
             
             <div className="animate-fade-in flex flex-wrap gap-4">
               <a href="#activities" className="activity-btn bg-gradient-to-r from-blue-600 to-purple-600 text-white">
@@ -52,10 +71,30 @@ const Hero = () => {
           </div>
           
           <div className="relative h-[500px] hidden md:block">
-            <div className="parallax-image absolute w-56 h-56 rounded-2xl shadow-xl top-0 right-0 cricket-card animate-float" style={{animationDelay: '0s'}}></div>
-            <div className="parallax-image absolute w-48 h-48 rounded-2xl shadow-xl top-20 left-20 football-card animate-float" style={{animationDelay: '0.5s'}}></div>
-            <div className="parallax-image absolute w-64 h-64 rounded-2xl shadow-xl bottom-0 right-20 arcade-card animate-float" style={{animationDelay: '1s'}}></div>
-            <div className="parallax-image absolute w-40 h-40 rounded-2xl shadow-xl bottom-32 left-0 trampoline-card animate-float" style={{animationDelay: '1.5s'}}></div>
+            <div className="parallax-image absolute w-56 h-56 rounded-2xl shadow-xl top-0 right-0 cricket-card animate-float overflow-hidden" style={{animationDelay: '0s'}}>
+              <div className="absolute inset-0 bg-green-100/50 flex items-center justify-center">
+                <Activity size={48} className="text-green-600" />
+                <span className="absolute bottom-4 font-medium text-green-800">Cricket</span>
+              </div>
+            </div>
+            <div className="parallax-image absolute w-48 h-48 rounded-2xl shadow-xl top-20 left-20 football-card animate-float overflow-hidden" style={{animationDelay: '0.5s'}}>
+              <div className="absolute inset-0 bg-blue-100/50 flex items-center justify-center">
+                <DumbbellIcon size={40} className="text-blue-600" />
+                <span className="absolute bottom-4 font-medium text-blue-800">Football</span>
+              </div>
+            </div>
+            <div className="parallax-image absolute w-64 h-64 rounded-2xl shadow-xl bottom-0 right-20 arcade-card animate-float overflow-hidden" style={{animationDelay: '1s'}}>
+              <div className="absolute inset-0 bg-red-100/50 flex items-center justify-center">
+                <Gamepad2Icon size={56} className="text-red-600" />
+                <span className="absolute bottom-4 font-medium text-red-800">Arcade</span>
+              </div>
+            </div>
+            <div className="parallax-image absolute w-40 h-40 rounded-2xl shadow-xl bottom-32 left-0 trampoline-card animate-float overflow-hidden" style={{animationDelay: '1.5s'}}>
+              <div className="absolute inset-0 bg-yellow-100/50 flex items-center justify-center">
+                <TrampolineIcon size={36} className="text-yellow-600" />
+                <span className="absolute bottom-4 font-medium text-yellow-800">Trampoline</span>
+              </div>
+            </div>
           </div>
         </div>
         
